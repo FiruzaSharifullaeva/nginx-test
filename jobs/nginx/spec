@@ -1,0 +1,16 @@
+---
+name: nginx
+templates:
+    ctl.sh: bin/ctl
+    nginx.conf.erb: etc/nginx.conf
+
+packages:
+- nginx
+
+provides:
+- name: http-server
+  type: http-router
+
+properties:
+  nginx_conf:
+    description: 'The contents of nginx.conf, the primary configuration file'
